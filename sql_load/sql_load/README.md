@@ -1,14 +1,14 @@
 # Introduction
-Look in
+Top skills for Data Scientist roles based on salary and demand of jobs.
 
 SQL queries? Check them out here [project_sql_folder](/project_sql/)
 # Background
 blah blah
 
-1. What are the top-paying data analyst roles?
-2.
-3.
-4.
+1. What are the top-paying Data Analyst roles?
+2. What are the top-paying skills for Data Analyst roles?
+3. What are the top demanded skills for Data Analyst roles?
+4. 
 5.
 # Tools used
 - **SQL**: 
