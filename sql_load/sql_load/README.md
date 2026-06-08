@@ -42,7 +42,6 @@ LIMIT 10
 blah blah
 
 ![Top_Paying_Roles](assets/Top_10_Data_Analyst_Salaries.png)
-
 *chatgpt generated it*
 
 # What I learned
