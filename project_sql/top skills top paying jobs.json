@@ -1,0 +1,42 @@
+[
+  {
+    "skills": "python",
+    "job_count": "26606"
+  },
+  {
+    "skills": "sql",
+    "job_count": "21984"
+  },
+  {
+    "skills": "aws",
+    "job_count": "14658"
+  },
+  {
+    "skills": "spark",
+    "job_count": "13889"
+  },
+  {
+    "skills": "azure",
+    "job_count": "9482"
+  },
+  {
+    "skills": "java",
+    "job_count": "9448"
+  },
+  {
+    "skills": "hadoop",
+    "job_count": "8494"
+  },
+  {
+    "skills": "scala",
+    "job_count": "8482"
+  },
+  {
+    "skills": "snowflake",
+    "job_count": "8475"
+  },
+  {
+    "skills": "r",
+    "job_count": "8063"
+  }
+]
