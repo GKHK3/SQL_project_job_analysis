@@ -76,6 +76,9 @@ INNER JOIN skills_dim ON skills_job.skill_id = skills_dim.skill_id
 ORDER BY  top_paying_jobs.salary_year_avg DESC
 ```
 
+![top_highest_paying_skills](assets/top10_highest_skill_pay.png)
+*chatgpt generated it*
+
 ### 3. Most Demanded Skills
 blah blah
 ```sql
@@ -94,6 +97,14 @@ blah blah
         demand_count DESC
     LIMIT 5
 ```
+blah blah
+| Rank | Skill   | Job Count |
+| :--: | :------ | -----------: |
+|   1  | Python  |       10,390 |
+|   2  | SQL     |        7,488 |
+|   3  | R       |        4,674 |
+|   4  | AWS     |        2,593 |
+|   5  | Tableau |        2,458 |
 
 ### 4. Skills that Pay the Most
 blah blah
@@ -115,6 +126,34 @@ GROUP BY skills
 ORDER BY avg_salary DESC
 LIMIT 25
 ```
+blahblah
+| Rank | Skill         | Average Salary (USD) |
+| :--: | :------------ | -------------------: |
+|   1  | GDPR          |             $217,738 |
+|   2  | Golang        |             $208,750 |
+|   3  | Atlassian     |             $189,700 |
+|   4  | Selenium      |             $180,000 |
+|   5  | OpenCV        |             $172,500 |
+|   6  | Neo4j         |             $171,655 |
+|   7  | MicroStrategy |             $171,147 |
+|   8  | DynamoDB      |             $169,670 |
+|   9  | PHP           |             $168,125 |
+|  10  | Tidyverse     |             $165,513 |
+|  11  | Solidity      |             $165,000 |
+|  12  | C             |             $164,865 |
+|  13  | Go            |             $164,691 |
+|  14  | DataRobot     |             $164,500 |
+|  15  | Qlik          |             $164,485 |
+|  16  | Redis         |             $162,500 |
+|  17  | Watson        |             $161,710 |
+|  18  | Rust          |             $161,250 |
+|  19  | Elixir        |             $161,250 |
+|  20  | Cassandra     |             $160,850 |
+|  21  | Looker        |             $158,715 |
+|  22  | Slack         |             $158,333 |
+|  23  | Terminal      |             $157,500 |
+|  24  | Airflow       |             $157,414 |
+|  25  | Julia         |             $157,244 |
 
 ### 5. Most optimal skills for Data Scientists
 blah
@@ -140,6 +179,8 @@ ORDER BY
    demand_count DESC
 LIMIT 25
 ```
+blah blah
+![Top_15_skills](assets/Top_15_Data_Scientist_Skills.png)
 
 # What I learned
 hello test 123

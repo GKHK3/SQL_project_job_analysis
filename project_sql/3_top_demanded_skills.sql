@@ -1,4 +1,4 @@
-
+/* 1st draft for internship jobs
 WITH top_intern_jobs AS(
 SELECT
      job_title,
@@ -27,7 +27,7 @@ FROM
 GROUP BY skills
 ORDER BY amount_of_jobs DESC;
 
-/*
+
 TOP SKILLS FOR DATA INTERNSHIPS WITH HOURLY RATE OF 45+ dolalr
 Core Skills (Most Valuable)
 These dominate internship postings and should be priorities:
@@ -38,6 +38,7 @@ SAS (12)
 Spark (10)
 */
 
+--concise ver
     SELECT
         skills,
         COUNT(skills_job_dim.job_id) AS demand_count
