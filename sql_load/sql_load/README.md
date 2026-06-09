@@ -1,5 +1,5 @@
 # Introduction
-Top skills for Data Scientist roles based on salary and demand of jobs.
+**Top skills for Data Scientist roles based on salary and demand of jobs.**
 
 SQL queries? Check them out here [project_sql_folder](/project_sql/)
 # Background
@@ -41,7 +41,7 @@ LIMIT 10
 ```
 blah blah
 
-![Top_Paying_Roles](assets/Top_10_Scientists_salaries.png)
+![Top_Paying_Roles](assets/Top_10_Data_Scientists_Salaries.png)
 *chatgpt generated it*
 
 ### 2. Skills Required for top-paying Data Scientist roles
