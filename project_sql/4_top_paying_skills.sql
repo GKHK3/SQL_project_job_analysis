@@ -1,8 +1,3 @@
-/*
-based off salary year avg above 150,000 jobs
-how many jobs above ^
-*/
-
 
 WITH top_skills AS(
 SELECT
@@ -39,7 +34,7 @@ LIMIT 10;
 
 /*
 average salary
-for data analyst roles, highest paying skills
+for data scientist roles, highest paying skills
 */
 
 SELECT
@@ -50,7 +45,7 @@ INNER JOIN skills_job_dim ON job_postings.job_id = skills_job_dim.job_id
 INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 
 WHERE 
-   job_title_short = 'Data Analyst'
+   job_title_short = 'Data Scientist'
    AND salary_year_avg IS NOT NULL 
    AND job_work_from_home = TRUE
    

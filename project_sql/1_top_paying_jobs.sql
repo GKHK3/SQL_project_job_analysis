@@ -1,8 +1,8 @@
 /* 
-Top-paying data analyst jobs
+Top-paying data scientist jobs
 -top 10 highest paying data analyst roles remote
 -focuses on job postings with specified salaries (remove nulls)
--Highlight top paying jobs for DA 
+-Highlight top paying jobs for DS
 */
 
 SELECT
@@ -16,7 +16,7 @@ FROM
     job_postings_fact
 LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
 
-WHERE job_title = 'Data Analyst' AND 
+WHERE job_title = 'Data Scientist' AND 
       job_location = 'Anywhere' AND
       job_work_from_home = TRUE AND
       salary_year_avg IS NOT NULL
