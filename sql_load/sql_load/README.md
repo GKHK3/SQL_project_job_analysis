@@ -19,6 +19,11 @@ blah blah
 ### 1. Top Paying Data Scientist Jobs
 blah blah
 
+![Top_Paying_Roles](assets/Top_10_Data_Scientists_Salaries.png)
+*chatgpt generated it*
+
+blah blah
+
 ```sql
 SELECT
     job_id,
@@ -39,13 +44,14 @@ ORDER BY
       salary_year_avg DESC
 LIMIT 10
 ```
-blah blah
 
-![Top_Paying_Roles](assets/Top_10_Data_Scientists_Salaries.png)
-*chatgpt generated it*
 
 ### 2. Skills Required for top-paying Data Scientist roles
 blah blah
+
+![top_highest_paying_skills](assets/top10_highest_skill_pay.png)
+*chatgpt generated it*
+
 
 ```sql
 WITH top_paying_jobs AS(
@@ -76,11 +82,18 @@ INNER JOIN skills_dim ON skills_job.skill_id = skills_dim.skill_id
 ORDER BY  top_paying_jobs.salary_year_avg DESC
 ```
 
-![top_highest_paying_skills](assets/top10_highest_skill_pay.png)
-*chatgpt generated it*
-
 ### 3. Most Demanded Skills
 blah blah
+
+blah blah
+| Rank | Skill   | Job Count |
+| :--: | :------ | -----------: |
+|   1  | Python  |       10,390 |
+|   2  | SQL     |        7,488 |
+|   3  | R       |        4,674 |
+|   4  | AWS     |        2,593 |
+|   5  | Tableau |        2,458 |
+
 ```sql
     SELECT
         skills,
@@ -97,36 +110,10 @@ blah blah
         demand_count DESC
     LIMIT 5
 ```
-blah blah
-| Rank | Skill   | Job Count |
-| :--: | :------ | -----------: |
-|   1  | Python  |       10,390 |
-|   2  | SQL     |        7,488 |
-|   3  | R       |        4,674 |
-|   4  | AWS     |        2,593 |
-|   5  | Tableau |        2,458 |
 
 ### 4. Skills that Pay the Most
 blah blah
-```sql
-SELECT
-   skills,
-   ROUND(AVG(salary_year_avg),0) AS avg_salary
-FROM job_postings_fact AS job_postings
-INNER JOIN skills_job_dim ON job_postings.job_id = skills_job_dim.job_id
-INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 
-WHERE 
-   job_title_short = 'Data Scientist'
-   AND salary_year_avg IS NOT NULL 
-   AND job_work_from_home = TRUE
-   
-
-GROUP BY skills
-ORDER BY avg_salary DESC
-LIMIT 25
-```
-blahblah
 | Rank | Skill         | Average Salary (USD) |
 | :--: | :------------ | -------------------: |
 |   1  | GDPR          |             $217,738 |
@@ -155,8 +142,33 @@ blahblah
 |  24  | Airflow       |             $157,414 |
 |  25  | Julia         |             $157,244 |
 
+```sql
+SELECT
+   skills,
+   ROUND(AVG(salary_year_avg),0) AS avg_salary
+FROM job_postings_fact AS job_postings
+INNER JOIN skills_job_dim ON job_postings.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+
+WHERE 
+   job_title_short = 'Data Scientist'
+   AND salary_year_avg IS NOT NULL 
+   AND job_work_from_home = TRUE
+   
+
+GROUP BY skills
+ORDER BY avg_salary DESC
+LIMIT 25
+```
+blahblah
+
+
 ### 5. Most optimal skills for Data Scientists
 blah
+
+![Top_15_skills](assets/Top_15_Data_Scientist_Skills.png)
+
+
 ```sql
 SELECT
     skills_dim.skill_id,
@@ -180,7 +192,6 @@ ORDER BY
 LIMIT 25
 ```
 blah blah
-![Top_15_skills](assets/Top_15_Data_Scientist_Skills.png)
 
 # What I learned
 hello test 123

@@ -1,9 +1,12 @@
 # Introduction
-**Top skills for Data Scientist roles based on salary and demand of jobs.**
+**Top skills for Data Scientist roles based on salary and demand of jobs in 2023.**
 
 SQL queries? Check them out here [project_sql_folder](/project_sql/)
 # Background
-blah blah
+Searching for data-related roles myself I decided to look into the most optimal skills based on how well it paid, the demand and a mixture of both factors.
+
+The data was retrieved from [Data Roles](https://lukeabrousse.com/sql). 
+### Questions I wanted to anwser:
 
 1. What are the top-paying Data Scientist roles?
 2. What are the skills required for top-paying Data Scientist roles?
@@ -11,14 +14,25 @@ blah blah
 4. What are the Top paying skills for Data Scientist jobs?
 5. What are the most optimal skills to learn? (Pay and Demand)
 # Tools used
-- **SQL**: 
-- **PostgresQL**: 
-- **Git & GitHub**: 
+Researching the market I mainly used these three tools to manage and format my data.
+
+- **SQL**: Where all my queries were made, allowing me to anwser my queries and produce my results.
+- **PostgresQL**: Chosen database management system.
+-**Visual Studio Code**: Go to for handling data and executing queries. 
+- **Git & GitHub**: Site used to share my data and management of project. 
 # Analysis
 blah blah
 ### 1. Top Paying Data Scientist Jobs
-blah blah
+This is the top-paying Remote Data Scientist jobs of 2023.
 
+**Wide salary range:** Top 10 remote Data Scientist salaries range from $185,000 - $375,000 indicating high-salary potential in this role.
+**Top-paying Remote jobs:** Data Scientist roles still offers competitive remote roles.
+
+![Top_Paying_Roles](assets/Top_10_Data_Scientists_Salaries.png)
+*This bar graph was generated with Chat GPT showing top 10 Remote Data Scientist Salaries.*
+
+
+This query 
 ```sql
 SELECT
     job_id,
@@ -31,7 +45,7 @@ FROM
     job_postings_fact
 LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
 
-WHERE job_title = 'Data Analyst' AND 
+WHERE job_title = 'Data Scientist' AND 
       job_location = 'Anywhere' AND
       job_work_from_home = TRUE AND
       salary_year_avg IS NOT NULL
@@ -39,13 +53,14 @@ ORDER BY
       salary_year_avg DESC
 LIMIT 10
 ```
-blah blah
 
-![Top_Paying_Roles](assets/Top_10_Data_Scientists_Salaries.png)
-*chatgpt generated it*
 
 ### 2. Skills Required for top-paying Data Scientist roles
 blah blah
+
+![top_highest_paying_skills](assets/top10_highest_skill_pay.png)
+*chatgpt generated it*
+
 
 ```sql
 WITH top_paying_jobs AS(
@@ -76,11 +91,18 @@ INNER JOIN skills_dim ON skills_job.skill_id = skills_dim.skill_id
 ORDER BY  top_paying_jobs.salary_year_avg DESC
 ```
 
-![top_highest_paying_skills](assets/top10_highest_skill_pay.png)
-*chatgpt generated it*
-
 ### 3. Most Demanded Skills
 blah blah
+
+blah blah
+| Rank | Skill   | Job Count |
+| :--: | :------ | -----------: |
+|   1  | Python  |       10,390 |
+|   2  | SQL     |        7,488 |
+|   3  | R       |        4,674 |
+|   4  | AWS     |        2,593 |
+|   5  | Tableau |        2,458 |
+
 ```sql
     SELECT
         skills,
@@ -97,36 +119,10 @@ blah blah
         demand_count DESC
     LIMIT 5
 ```
-blah blah
-| Rank | Skill   | Job Count |
-| :--: | :------ | -----------: |
-|   1  | Python  |       10,390 |
-|   2  | SQL     |        7,488 |
-|   3  | R       |        4,674 |
-|   4  | AWS     |        2,593 |
-|   5  | Tableau |        2,458 |
 
 ### 4. Skills that Pay the Most
 blah blah
-```sql
-SELECT
-   skills,
-   ROUND(AVG(salary_year_avg),0) AS avg_salary
-FROM job_postings_fact AS job_postings
-INNER JOIN skills_job_dim ON job_postings.job_id = skills_job_dim.job_id
-INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 
-WHERE 
-   job_title_short = 'Data Scientist'
-   AND salary_year_avg IS NOT NULL 
-   AND job_work_from_home = TRUE
-   
-
-GROUP BY skills
-ORDER BY avg_salary DESC
-LIMIT 25
-```
-blahblah
 | Rank | Skill         | Average Salary (USD) |
 | :--: | :------------ | -------------------: |
 |   1  | GDPR          |             $217,738 |
@@ -155,8 +151,33 @@ blahblah
 |  24  | Airflow       |             $157,414 |
 |  25  | Julia         |             $157,244 |
 
+```sql
+SELECT
+   skills,
+   ROUND(AVG(salary_year_avg),0) AS avg_salary
+FROM job_postings_fact AS job_postings
+INNER JOIN skills_job_dim ON job_postings.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+
+WHERE 
+   job_title_short = 'Data Scientist'
+   AND salary_year_avg IS NOT NULL 
+   AND job_work_from_home = TRUE
+   
+
+GROUP BY skills
+ORDER BY avg_salary DESC
+LIMIT 25
+```
+blahblah
+
+
 ### 5. Most optimal skills for Data Scientists
 blah
+
+![Top_15_skills](assets/Top_15_Data_Scientist_Skills.png)
+
+
 ```sql
 SELECT
     skills_dim.skill_id,
@@ -180,7 +201,6 @@ ORDER BY
 LIMIT 25
 ```
 blah blah
-![Top_15_skills](assets/Top_15_Data_Scientist_Skills.png)
 
 # What I learned
 hello test 123
